@@ -9,6 +9,12 @@
     background: linear-gradient(68.15deg, #4c92ad 16.62%, #9cc5c7 85.61%);
     height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+.cabecalho{
+    height: 90px;
+    width: 100%;
+    background-color: white;
 }
 .jogo-da-memoria{
     width: 640px;

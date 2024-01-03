@@ -1,13 +1,16 @@
 const cards = document.querySelectorAll('.card'); // Pega as cartas
 
+let contadorDeClicks = 0
 let hasFlippedCard = false; // Define como falso
 let lockBoard = false;
 let firstCard, secondCard; // Cria essas variáveis 
 
 function flipCard() { // Cria a função para virar a carta
+    console.log('flipCard');
     if (lockBoard) return;
     if (this === firstCard) return;
     this.classList.add('flip'); // Adiciona a classe flip para as cartas que forem clicadas
+    contarCliques();
 
   if (!hasFlippedCard) { // Se <<<
     // Todo primeiro clique entra no IF
@@ -53,5 +56,8 @@ function resetBoard() {
       card.style.order = ramdomPos;
     });
 })();
-
+function contarCliques(){
+    contadorDeClicks++;
+    console.log(contadorDeClicks);
+}
 cards.forEach(card => card.addEventListener('click', flipCard)); // Adiciona click a todas as cartas
