@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.fundinho{
+    font-size: 100%;
+    background: linear-gradient(68.15deg, #4c92ad 16.62%, #9cc5c7 85.61%);
+    height: 100vh;
+    display: flex;
+}
+.jogo-da-memoria{
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+.card{
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card:active{
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.imagens,
+.fundoCarta{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #1C7CCC;
+    backface-visibility: hidden;
+}
+.card.flip{
+    transform: rotateY(180deg);
+}
+.imagens{
+    transform: rotateY(180deg);
+}
