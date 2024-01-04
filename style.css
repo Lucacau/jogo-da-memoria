@@ -12,10 +12,10 @@
     flex-direction: column;
 }
 .cabecalho{
-    height: 90px;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;
 }
 .logo{
     height: 90px;
@@ -24,7 +24,6 @@
 .jogo-da-memoria{
     width: 640px;
     height: 640px;
-    margin: auto;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
@@ -60,4 +59,14 @@
 }
 .imagens{
     transform: rotateY(180deg);
+}
+.jogo-e-contadores{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contadores{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
 }

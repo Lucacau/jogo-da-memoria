@@ -10,66 +10,72 @@
     <header class="cabecalho">
         <img class="logo" src="/img/joguin da memo.png" alt="logoDoSite">
     </header>
-    <div>
-        <span id="hour">00</span>:
-        <span id="minute">00</span>:
-        <span id="second">00</span>:
-        <span id="millisecond">000</span>
-        <p>
-            Clicks utilizados: <span id="click-count">0</span>
-        </p>
-        <button id="reset-button">Começar novamente</button>
+    <div id="jogo-e-contadores">
+        <div id="contadores">
+            <div>
+                <span id="hour">00</span>:
+                <span id="minute">00</span>:
+                <span id="second">00</span>:
+                <span id="millisecond">000</span>
+                <p>
+                    Clicks utilizados: <span id="click-count">0</span>
+                </p>
+            </div>
+            <div>
+                <button id="reset-button">Começar novamente</button>
+            </div>
+        </div>
+        <section class="jogo-da-memoria">
+            <div class="card" data-framework="Bateria"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/bateria.png" alt="Bateria">
+            </div>
+            <div class="card" data-framework="Bateria"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/bateria.png" alt="Bateria">
+            </div>
+            <div class="card" data-framework="Guitarra"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/guitarra.png" alt="Guitarra">
+            </div>
+            <div class="card" data-framework="Guitarra"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/guitarra.png" alt="Guitarra">
+            </div>
+            <div class="card" data-framework="Pandero"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/pandero.png" alt="Pandero">
+            </div>
+            <div class="card" data-framework="Pandero"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/pandero.png" alt="Pandero">
+            </div>
+            <div class="card" data-framework="Saxofone"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/saxofone.png" alt="Saxofone">
+            </div>
+            <div class="card" data-framework="Saxofone"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/saxofone.png" alt="Saxofone">
+            </div>
+            <div class="card" data-framework="Tambor"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/tambor.png" alt="Tambor">
+            </div>
+            <div class="card" data-framework="Tambor"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/tambor.png" alt="Tambor">
+            </div>
+            <div class="card" data-framework="Violao"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/violao.png" alt="Violao">
+            </div>
+            <div class="card" data-framework="Violao"> 
+                <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
+                <img class="imagens"src="img/violao.png" alt="Violao">
+            </div>
+        </section>
     </div>
-    <section class="jogo-da-memoria">
-        <div class="card" data-framework="Bateria"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/bateria.png" alt="Bateria">
-        </div>
-        <div class="card" data-framework="Bateria"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/bateria.png" alt="Bateria">
-        </div>
-        <div class="card" data-framework="Guitarra"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/guitarra.png" alt="Guitarra">
-        </div>
-        <div class="card" data-framework="Guitarra"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/guitarra.png" alt="Guitarra">
-        </div>
-        <div class="card" data-framework="Pandero"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/pandero.png" alt="Pandero">
-        </div>
-        <div class="card" data-framework="Pandero"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/pandero.png" alt="Pandero">
-        </div>
-        <div class="card" data-framework="Saxofone"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/saxofone.png" alt="Saxofone">
-        </div>
-        <div class="card" data-framework="Saxofone"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/saxofone.png" alt="Saxofone">
-        </div>
-        <div class="card" data-framework="Tambor"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/tambor.png" alt="Tambor">
-        </div>
-        <div class="card" data-framework="Tambor"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/tambor.png" alt="Tambor">
-        </div>
-        <div class="card" data-framework="Violao"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/violao.png" alt="Violao">
-        </div>
-        <div class="card" data-framework="Violao"> 
-            <img class="fundoCarta" src="img/sol-sorrindo.png" alt="Sol">
-            <img class="imagens"src="img/violao.png" alt="Violao">
-        </div>
-    </section>
     <script src="./scripts.js"></script>
 </body>
 </html>
