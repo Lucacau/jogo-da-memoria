@@ -14,7 +14,11 @@
 .cabecalho{
     height: 90px;
     width: 100%;
-    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    height: 90px;
 }
 .jogo-da-memoria{
     width: 640px;

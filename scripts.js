@@ -1,6 +1,6 @@
 const cards = document.querySelectorAll('.card'); // Pega as cartas
 
-let contadorDeClicks = 0
+let contadorDeClicks = 0;
 let hasFlippedCard = false; // Define como falso
 let lockBoard = false;
 let firstCard, secondCard; // Cria essas variáveis 
@@ -20,7 +20,7 @@ function flipCard() { // Cria a função para virar a carta
     return; // Retorna ao IF
   }
   // Todo segundo clique ignora o IF
-  secondCard = this; // Segunda carta recebe "This"
+  secondCard = this; // Segunda carta recebe "This"}
 
   checkForMatch(); // E então chama a função para verificar se bate
 }
