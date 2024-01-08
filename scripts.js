@@ -43,16 +43,29 @@ function checkForMatch() { // Cria a função para chegar se bate
 
     if (document.querySelectorAll('.flip').length === cards.length) { // Pega o número de cartas que foram viradas no jogo e compara com o número de cartas que existem no jogo, se forem iguais, ele chama a função para finalizar o jogo.
         pause(); // Chama a função para pausar o cronômetro
-        console.log(`Jogo terminado! Cliques: ${contadorDeClicks}`);
+        // console.log(`Jogo terminado! Cliques: ${contadorDeClicks}`);
 
-        user = prompt("Qual seu nome?:","");
+        var user = prompt("Qual seu nome?:", "");
         if (user != "" && user != null) {
+            const userScore = calculateScore();
             user = capitalizeNames(user);
-            setCookie(user, document.querySelector('.tempo').innerText, 365);
+            setCookie(user, userScore, 365);
+            scoreBoard();
         }
         // true ou false ? se true : se false;
+    }
 }
+
+function calculateScore() {
+    // const timeScore = (minute * 60 + second) * 10; // Assume 10 pontos por segundo
+    // const clickScore = Math.max(0, 1000 - contadorDeClicks * 10); // Pontuação máxima é 1000
+    // const totalScore = Math.min(1000, clickScore - timeScore); // Limita a pontuação máxima em 1000
+
+    var totalScore = Math.max(0, 1000 - ((minute * 60 + second) * contadorDeClicks)*0.8);
+
+    return totalScore;
 }
+
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
@@ -192,24 +205,42 @@ function checkCookie(name) { // Adiciona o nome do cookie
     }
 } 
 
-//     var score = document.cookie.split('; ')
-//     const node = document.createElement("p");
-//     const textnode = document.createTextNode(score);
-//     node.appendChild(textnode);
-//     document.getElementById('#rightSide').appendChild(node)
-// }
-
 function scoreBoard() {
-    var scores = document.cookie.split('; ');
-    
-    scores.forEach(score => {
-        score = score.split('=');
-
-        var node = document.createElement("p");
-        var textnode = document.createTextNode(score[0]+': '+score[1]);
-        node.appendChild(textnode);
-        document.getElementById('rightSide').appendChild(node);
+    // Obtém a string de cookies e a divide em um array de strings
+    const scores = document.cookie.split('; ');
+    // Mapeia os scores para um array de objetos
+    const scoresArray = scores.map(score => {
+        // Para cada score, divide a string do cookie em nome e valor
+        const [name, value] = score.split('=');
+        // Retorna um objeto com propriedades name e value, convertendo o valor para inteiro
+        return { name, value: parseInt(value) };
     });
+    console.log(scoresArray);
+    // Ordena o array de scores em ordem decrescente com base no valor
+    scoresArray.sort((a, b) => b.value - a.value);
+    // Obtém a referência ao rightSide
+    const scoreboardElement = document.getElementById('rightSide');
+    // Limpa o conteúdo atual do elemento HTML
+    scoreboardElement.innerHTML = '';
+    // Adiciona os scores ordenados ao elemento HTML
+    if (scoresArray[0].name != ''){
+        scoresArray.forEach(score => {
+            const node = document.createElement('p');
+            node.classList.add("scoreboard");
+            const textnode = document.createTextNode(`${score.name}: ${score.value}`);
+            node.appendChild(textnode);
+            const newButton = document.createElement('button');
+            newButton.classList.add("botao-de-exclusao");
+            // newButton.textContent = 'Excluir';
+            newButton.addEventListener('click', function(){
+                deleteCookie(score.name);
+                scoreBoard();
+            });
+            node.appendChild(newButton);
+
+            scoreboardElement.appendChild(node);
+        });
+    }
 }
 
 scoreBoard();
