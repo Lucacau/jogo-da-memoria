@@ -40,8 +40,4 @@
         align-items: center;
         justify-content: unset;
     }
-    .botao-de-exclusao {
-        background: #a92121;
-        border-radius: 50%;
-    }
 }
