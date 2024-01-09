@@ -49,6 +49,7 @@ function checkForMatch() { // Cria a função para chegar se bate
         if (user != "" && user != null) {
             const userScore = calculateScore();
             user = capitalizeNames(user);
+            ativarConfetes();
             setCookie(user, userScore, 365);
             scoreBoard();
         }
@@ -240,6 +241,36 @@ function scoreBoard() {
 
             scoreboardElement.appendChild(node);
         });
+    }
+}
+
+function createConfetti() {
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.backgroundColor = getRandomColor();
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.animationDuration = Math.random() * 3 + 1 + 's';
+    confetti.style.animationDelay = Math.random() * 2 + 's';
+    confetti.style.transform = 'rotate('+ Math.random()*179 +'deg)';
+    document.getElementById('confetti-container').appendChild(confetti);
+
+    confetti.addEventListener('animationend', () => {
+        confetti.remove();
+    });
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function ativarConfetes() {
+    for (let i = 0; i < 100; i++) {
+        createConfetti();
     }
 }
 
