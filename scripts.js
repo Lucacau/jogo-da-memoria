@@ -43,7 +43,6 @@ function checkForMatch() { // Cria a função para chegar se bate
 
     if (document.querySelectorAll('.flip').length === cards.length) { // Pega o número de cartas que foram viradas no jogo e compara com o número de cartas que existem no jogo, se forem iguais, ele chama a função para finalizar o jogo.
         pause(); // Chama a função para pausar o cronômetro
-        // console.log(`Jogo terminado! Cliques: ${contadorDeClicks}`);
 
         var user = prompt("Qual seu nome?:", "");
         if (user != "" && user != null) {
@@ -58,10 +57,6 @@ function checkForMatch() { // Cria a função para chegar se bate
 }
 
 function calculateScore() {
-    // const timeScore = (minute * 60 + second) * 10; // Assume 10 pontos por segundo
-    // const clickScore = Math.max(0, 1000 - contadorDeClicks * 10); // Pontuação máxima é 1000
-    // const totalScore = Math.min(1000, clickScore - timeScore); // Limita a pontuação máxima em 1000
-
     var totalScore = Math.max(0, 1000 - ((minute * 60 + second) * contadorDeClicks)*0.8);
 
     return totalScore;
@@ -94,7 +89,6 @@ function shuffle(){
 function contarCliques(){
     contadorDeClicks++;
     clickCountElement.textContent = contadorDeClicks;
-    console.log('contadorDeClicks');
 }
 
 function capitalizeNames(names) {
@@ -198,10 +192,8 @@ function deleteCookie(name) { // Adiciona o nome do cookie
 function checkCookie(name) { // Adiciona o nome do cookie
     var cookieValue = getCookie(name); // Puxa o nome do cookie com a função getCookie();
     if (cookieValue !== null) {  // Verifica se o cookie é tem valor diferente
-        console.log(`O cookie '${name}' existe. Valor: ${cookieValue}`); // Caso sim, mostra a mensagem com nome e valor do cookie dizendo que existe.
         return true; // Retorna verdadeiro
     } else { // Caso contrário
-        console.log(`O cookie '${name}' não existe.`); // Retorna o nome com a mensagem de que não existe.
         return false; // Retorna falso
     }
 } 
@@ -216,7 +208,6 @@ function scoreBoard() {
         // Retorna um objeto com propriedades name e value, convertendo o valor para inteiro
         return { name, value: parseInt(value) };
     });
-    console.log(scoresArray);
     // Ordena o array de scores em ordem decrescente com base no valor
     scoresArray.sort((a, b) => b.value - a.value);
     // Obtém a referência ao rightSide
