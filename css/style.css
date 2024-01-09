@@ -29,7 +29,6 @@
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
-    /* margin-right: 200px; */
 }
 .card{
     width: calc(25% - 10px);
@@ -41,12 +40,10 @@
     transform-style: preserve-3d;
     transition: transform .5s;
 }
-
 .card:active{
     transform: scale(0.97);
     transition: transform .2s;
 }
-
 .imagens,
 .fundoCarta{
     width: 100%;
@@ -83,6 +80,8 @@
 }       
 #rightSide{
     width: 20%;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 15px;
 }
 .temporizador{
     font-family: 'Press Start 2P', system-ui;
@@ -94,6 +93,7 @@
     font-family: 'Press Start 2P', system-ui;
     border: 0 solid;
     height: 50px;
+    padding-inline: 10px;
     border-radius: 20px;
     background: linear-gradient(68.15deg, #ffc400 16.62%, #f03607 85.61%);
     outline: 3px solid;
@@ -108,10 +108,6 @@
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
     text-shadow: 1px 1px 2px #427388; 
-}
-#rightSide{
-    font-family: 'Press Start 2P', system-ui;
-    font-size: 15px;
 }
 .botao-de-exclusao{
     height: 25px;
@@ -129,12 +125,8 @@
     display: flex;
     align-items: center;
     gap: 20px;
-}
-.scoreboard{
-    display: flex;
     justify-content: space-between;
 }
-
 #confetti-container{
     position: fixed;
     top: 0;
@@ -148,25 +140,14 @@
     width: 10px;
     height: 20px;
     border-radius: 2px;
-    /* transform: rotate(45deg); */
     position: absolute;
     top: -10vh;
     animation: quedaConfetti;
-    /* animation-duration: 10s; */
 }
 @keyframes quedaConfetti {
     0% {
         top: -10vh;
     }
-    /* 30%{
-        top: -30px;
-    }
-    50%{
-        top: 0px;
-    }
-    70%{
-        top: 30px;
-    } */
     100%{
         top: 110vh;
     }

@@ -1,0 +1,47 @@
+@media only screen and (max-width: 600px) {
+    .cabecalho {
+        margin-bottom: 20px;
+        margin-top: -30px;
+    }
+    #jogo-e-contadores {
+        flex-direction: column;
+    }
+    #contadores {
+        width: unset;
+        height: unset;
+        font-size: 10px;
+    }
+    .jogo-da-memoria {
+        width: 98%;
+        height: 440px;
+        margin-bottom: 10px;
+    }
+    #contadores {
+        font-size: 11px;
+        flex-direction: row;
+        align-items: center;
+        width: 98%;
+        margin-bottom: 10px;
+    }
+    .tempo {
+        margin-bottom: 10px;
+    }
+    #reset-button {
+        height: 30px;
+    }
+    #rightSide{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 98%;
+    }
+    .scoreBoard{
+        gap: unset;
+        display: flex;
+        align-items: center;
+    }
+    .botao-de-exlusao {
+        background: #a92121;
+        border-radius: 50%;
+    }
+}
