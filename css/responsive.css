@@ -35,12 +35,12 @@
         flex-direction: column;
         width: 98%;
     }
-    .scoreBoard{
-        gap: unset;
+    .scoreboard{
         display: flex;
         align-items: center;
+        justify-content: unset;
     }
-    .botao-de-exlusao {
+    .botao-de-exclusao {
         background: #a92121;
         border-radius: 50%;
     }
